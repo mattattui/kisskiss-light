@@ -12,14 +12,15 @@ class Template {
         $this->vars[$name] = $value;
     }
  
-    public function render($file) {
-        function e($string) { return htmlspecialchars($e, ENT_COMPAT, 'UTF-8'); }
-        
+    public function render($__file) {
         extract($this->vars);
         ob_start();
-        include($file);
+        include($__file);
         return ob_get_clean();
     }
+}
+function e($string) {
+    return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
 }
 
 ob_start();
