@@ -17,9 +17,19 @@ What does(n't) it do?
   plain HTML content in a simple template, you're on your own. It might 
   work, but that's not really what this is for. If you want a 
   micro-framework, try [Silex][]
+* Dynamically embeds the content in the template for every web request. This is
+  rarely necessary, but it's very easy & common. The alternative is to embed the 
+  content in the template only once when you change the content or the template,
+  then save the output to HTML files and upload those. Web servers can serve 
+  flat HTML files many times faster than running PHP scripts, and automatically
+  set headers that make web browsers and servers run more efficiently. If you 
+  don't update your content often, you have a busy site, or don't need to use
+  dynamic templating, this approach is much better. [Site-builder][] is a free
+  project that uses the same kind of templates as Kisskiss, so you can switch
+  methods easily and see which approach works best for you.
 
 [Silex]: http://silex-project.org/
-
+[Site-builder]: https://github.com/inanimatt/site-builder
 
 Installation
 ============
