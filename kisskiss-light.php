@@ -13,7 +13,7 @@ class Template {
     }
  
     public function render($__file) {
-        extract($this->vars);
+        extract($this->vars, EXTR_SKIP);
         ob_start();
         include($__file);
         return ob_get_clean();
